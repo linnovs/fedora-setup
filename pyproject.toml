@@ -1,0 +1,11 @@
+[project]
+name = "fedora-setup"
+version = "0.1.0"
+description = "Automated set up of Fedora Workstation using Ansible"
+readme = "README.md"
+requires-python = ">=3.14"
+license-files = ["LICENSE"]
+authors = [{ name = "Linnovs Liu", email = "no-reply@linnovs.com" }]
+dependencies = [
+  "ansible>=14.3.1",
+]

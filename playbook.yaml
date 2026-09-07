@@ -1,0 +1,69 @@
+- name: Setup Workstation
+  hosts: local
+  vars_prompt:
+    - name: hostname
+      prompt: Hostname
+      private: false
+  become: true
+  tasks:
+    - name: Set hostname
+      ansible.builtin.hostname:
+        name: "{{ hostname }}"
+
+    - name: Install packages
+      ansible.builtin.dnf5:
+        name:
+          - "adw-gtk3-theme"
+          - "atuin"
+          - "bat"
+          - "btop"
+          - "chezmoi"
+          - "cowsay"
+          - "direnv"
+          - "eza"
+          - "fcitx5"
+          - "fcitx5-rime"
+          - "fido2-tools"
+          - "fish"
+          - "flatpak"
+          - "fortune-mod"
+          - "gh"
+          - "git-delta"
+          - "git-lfs"
+          - "gnome-keyring"
+          - "google-noto-color-emoji-fonts"
+          - "google-noto-sans-cjk-fonts"
+          - "google-noto-sans-fonts"
+          - "google-noto-serif-cjk-fonts"
+          - "google-noto-serif-fonts"
+          - "greetd"
+          - "jetbrains-mono-fonts-all"
+          - "kdeconnectd"
+          - "lazygit"
+          - "lolcat"
+          - "mise"
+          - "nemo"
+          - "nemo-fileroller"
+          - "neovim"
+          - "nerdfontssymbolsonly-nerd-fonts"
+          - "niri"
+          - "noctalia"
+          - "noctalia-greeter"
+          - "nwg-look"
+          - "pam-u2f"
+          - "pamu2fcfg"
+          - "qalculate-gtk"
+          - "qimgv"
+          - "scrcpy"
+          - "signal-desktop"
+          - "syncthing"
+          - "tmux"
+          - "udiskie"
+          - "uv"
+          - "victor-mono-fonts"
+          - "xdg-desktop-portal"
+          - "xdg-desktop-portal-gnome"
+          - "xdg-desktop-portal-gtk"
+          - "xdg-desktop-portal-wlr"
+          - "zoxide"
+        state: "latest"
