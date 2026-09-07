@@ -10,6 +10,7 @@
         name: "{{ hostname }}"
 
     - name: Install packages
+      become: true
       ansible.builtin.dnf5:
         name:
           - "adw-gtk3-theme"
