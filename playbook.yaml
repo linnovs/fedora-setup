@@ -67,3 +67,14 @@
           - "xdg-desktop-portal-wlr"
           - "zoxide"
         state: "latest"
+
+    - name: Create Anurati font directory
+      ansible.builtin.file:
+        path: /home/{{ ansible_facts['user_id'] }}/.local/share/fonts/Anurati
+        state: directory
+        mode: "0755"
+
+    - name: Install Anurati font
+      ansible.builtin.unarchive:
+        src: ./Anurati-Regular.otf.zip
+        dest: /home/{{ ansible_facts['user_id'] }}/.local/share/fonts/Anurati
