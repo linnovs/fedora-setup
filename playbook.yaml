@@ -4,7 +4,6 @@
     - name: hostname
       prompt: Hostname
       private: false
-  become: true
   tasks:
     - name: Set hostname
       ansible.builtin.hostname:
