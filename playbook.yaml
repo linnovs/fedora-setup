@@ -133,6 +133,7 @@
           - "neovim"
 
           # apps
+          - "ImageMagick"
           - "brave-browser"
           - "fcitx5"
           - "fcitx5-rime"
