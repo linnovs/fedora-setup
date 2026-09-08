@@ -34,13 +34,13 @@
     - name: Enable the RPM Fusion free repository
       become: true
       ansible.builtin.dnf:
-        name: "https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-{{ ansible_facts[distribution_version] }}.noarch.rpm"
+        name: "https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-{{ ansible_facts['distribution_version'] }}.noarch.rpm"
         state: present
 
     - name: Enable the RPM Fusion nonfree repository
       become: true
       ansible.builtin.dnf:
-        name: "https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-{{ ansible_facts[distribution_version] }}.noarch.rpm"
+        name: "https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-{{ ansible_facts['distribution_version'] }}.noarch.rpm"
         state: present
 
     - name: Enable terra repository
@@ -51,7 +51,7 @@
           - install
           - --nogpgcheck
           - --repofrompath
-          - terra,https://repos.fyralabs.com/terra{{ ansiible_facts[distribution_version] }}
+          - terra,https://repos.fyralabs.com/terra{{ ansiible_facts['distribution_version'] }}
           - terra-release
           - terra-gpg-keys
       register: command_output
