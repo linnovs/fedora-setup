@@ -45,6 +45,17 @@
         disable_gpg_check: true
         state: present
 
+    - name: Enable brave-browser repository
+      become: true
+      ansible.builtin.command:
+        argv:
+          - dnf
+          - config-manager
+          - addrepo
+          - --from-repofile=https://brave-browser-rpm-release.s3.brave.com/brave-browser.repo
+      register: command_output
+      changed_when: command_output.rc != 0
+
     - name: Enable terra repository
       become: true
       ansible.builtin.command:
