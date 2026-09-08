@@ -35,12 +35,14 @@
       become: true
       ansible.builtin.dnf:
         name: "https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-{{ ansible_facts['distribution_version'] }}.noarch.rpm"
+        disable_gpg_check: true
         state: present
 
     - name: Enable the RPM Fusion nonfree repository
       become: true
       ansible.builtin.dnf:
         name: "https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-{{ ansible_facts['distribution_version'] }}.noarch.rpm"
+        disable_gpg_check: true
         state: present
 
     - name: Enable terra repository
