@@ -116,6 +116,7 @@
           - "victor-mono-fonts"
 
         state: "latest"
+        skip_broken: true
 
     - name: Create default directories
       ansible.builtin.command: xdg-user-dirs-update
