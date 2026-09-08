@@ -79,6 +79,7 @@
           - "fido2-tools"
           - "gnome-keyring"
           - "greetd"
+          - "libappindicator-gtk3"
           - "pam-u2f"
           - "pamu2fcfg"
           - "udiskie"
