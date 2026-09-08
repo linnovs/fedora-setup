@@ -79,3 +79,12 @@
       ansible.builtin.unarchive:
         src: ./Anurati-Regular.otf.zip
         dest: /home/{{ ansible_facts['user_id'] }}/.local/share/fonts/Anurati
+
+    - name: Enable noctalia-greeter in greetd
+      ansible.builtin.lineinfile:
+        path: /etc/greetd/config.toml
+        regexp: '^command\s*='
+        line: 'command = "/usr/bin/noctalia-greeter-session"'
+        state: present
+        backup: true
+        mode: '0644'
