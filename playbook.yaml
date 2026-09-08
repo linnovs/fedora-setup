@@ -86,6 +86,11 @@
 
         state: "latest"
 
+    - name: Create default directories
+      ansible.builtin.command: xdg-user-dirs-update
+      register: command_output
+      changed_when: command_output.rc != 0
+
     - name: Create Anurati font directory
       ansible.builtin.file:
         path: /home/{{ ansible_facts['user_id'] }}/.local/share/fonts/Anurati
