@@ -9,6 +9,16 @@
       ansible.builtin.hostname:
         name: "{{ hostname }}"
 
+    - name: Configurate dnf
+      become: true
+      ansible.builtin.lineinfile:
+        path: /etc/dnf/dnf.conf
+        regexp: "^\\[main\\]"
+        line: |
+          [main]
+          max_parallel_downloads=10
+          defaultyes=True
+
     - name: Install packages
       become: true
       ansible.builtin.dnf5:
