@@ -51,7 +51,7 @@
           - install
           - --nogpgcheck
           - --repofrompath
-          - terra,https://repos.fyralabs.com/terra{{ ansiible_facts['distribution_version'] }}
+          - terra,https://repos.fyralabs.com/terra{{ ansible_facts['distribution_version'] }}
           - terra-release
           - terra-gpg-keys
       register: command_output
