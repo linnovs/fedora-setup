@@ -112,6 +112,7 @@
           - "fzf"
           - "jq"
           - "lolcat"
+          - "mise"
           - "playerctl"
           - "ripgrep"
           - "scrcpy"
