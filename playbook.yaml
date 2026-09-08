@@ -18,6 +18,7 @@
         section: main
         option: max_parallel_downloads
         value: 10
+        mode: "0644"
         backup: true
 
     - name: Ensure "defaultyes=True" is in section "[main]" in dnf.conf
@@ -27,6 +28,7 @@
         section: main
         option: defaultyes
         value: "True"
+        mode: "0644"
         backup: true
 
     - name: Install packages
