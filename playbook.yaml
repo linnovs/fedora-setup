@@ -33,7 +33,7 @@
 
     - name: Install packages
       become: true
-      ansible.builtin.dnf5:
+      ansible.builtin.dnf:
         name:
           # system
           - "fido2-tools"
