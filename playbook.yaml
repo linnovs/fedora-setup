@@ -10,15 +10,23 @@
       ansible.builtin.hostname:
         name: "{{ hostname }}"
 
-    - name: Configurate dnf
+    - name: Ensure "max_parallel_downloads=10" is in section "[main]" in dnf.conf
       become: true
-      ansible.builtin.lineinfile:
+      community.general.ini_file:
         path: /etc/dnf/dnf.conf
-        regexp: "^\\[main\\]"
-        line: |
-          [main]
-          max_parallel_downloads=10
-          defaultyes=True
+        section: main
+        option: max_parallel_downloads
+        value: 10
+        backup: true
+
+    - name: Ensure "defaultyes=True" is in section "[main]" in dnf.conf
+      become: true
+      community.general.ini_file:
+        path: /etc/dnf/dnf.conf
+        section: main
+        option: defaultyes
+        value: "True"
+        backup: true
 
     - name: Install packages
       become: true
