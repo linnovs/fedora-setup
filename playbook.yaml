@@ -1,3 +1,4 @@
+---
 - name: Setup Workstation
   hosts: local
   vars_prompt:
@@ -32,7 +33,6 @@
       become: true
       ansible.builtin.dnf5:
         name:
-
           # system
           - "fido2-tools"
           - "gnome-keyring"
