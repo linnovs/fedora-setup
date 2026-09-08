@@ -172,6 +172,7 @@
         dest: /home/{{ ansible_facts['user_id'] }}/.local/share/fonts/Anurati
 
     - name: Enable noctalia-greeter in greetd
+      become: true
       ansible.builtin.lineinfile:
         path: /etc/greetd/config.toml
         regexp: "^command\\s*="
