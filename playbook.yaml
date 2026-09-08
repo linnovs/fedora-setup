@@ -115,7 +115,6 @@
           - "nerdfontssymbolsonly-nerd-fonts"
           - "victor-mono-fonts"
 
-        state: "latest"
         skip_broken: true
 
     - name: Create default directories
