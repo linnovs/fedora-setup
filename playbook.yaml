@@ -51,6 +51,7 @@
         argv:
           - dnf
           - install
+          - -y
           - --nogpgcheck
           - --repofrompath
           - terra,https://repos.fyralabs.com/terra{{ ansible_facts['distribution_version'] }}
