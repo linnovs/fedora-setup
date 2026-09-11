@@ -82,6 +82,7 @@
           - "libappindicator-gtk3"
           - "pam-u2f"
           - "pamu2fcfg"
+          - "python3-pillow"
           - "udiskie"
           - "xdg-desktop-portal"
           - "xdg-desktop-portal-gnome"
