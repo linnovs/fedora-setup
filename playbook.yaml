@@ -124,6 +124,7 @@
           - "tmux"
           - "uv"
           - "yazi"
+          - "yq"
           - "zoxide"
 
           # dev
