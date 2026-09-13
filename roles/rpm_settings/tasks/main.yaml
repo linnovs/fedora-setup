@@ -1,0 +1,59 @@
+- name: Ensure "max_parallel_downloads=10" is in section "[main]" in dnf.conf
+  become: true
+  community.general.ini_file:
+    path: /etc/dnf/dnf.conf
+    section: main
+    option: max_parallel_downloads
+    value: 10
+    mode: "0644"
+    backup: true
+
+- name: Ensure "defaultyes=True" is in section "[main]" in dnf.conf
+  become: true
+  community.general.ini_file:
+    path: /etc/dnf/dnf.conf
+    section: main
+    option: defaultyes
+    value: "True"
+    mode: "0644"
+    backup: true
+
+- name: Enable the RPM Fusion free repository
+  become: true
+  ansible.builtin.dnf:
+    name: "https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-{{ ansible_facts['distribution_version'] }}.noarch.rpm"
+    disable_gpg_check: true
+    state: present
+
+- name: Enable the RPM Fusion nonfree repository
+  become: true
+  ansible.builtin.dnf:
+    name: "https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-{{ ansible_facts['distribution_version'] }}.noarch.rpm"
+    disable_gpg_check: true
+    state: present
+
+- name: Enable brave-browser repository
+  become: true
+  ansible.builtin.command:
+    argv:
+      - dnf
+      - config-manager
+      - addrepo
+      - --from-repofile=https://brave-browser-rpm-release.s3.brave.com/brave-browser.repo
+  register: rpm_settings_command_output
+  changed_when: rpm_settings_command_output.rc != 0
+
+- name: Enable terra repository
+  become: true
+  ansible.builtin.command:
+    argv:
+      - dnf
+      - install
+      - -y
+      - --nogpgcheck
+      - --repofrompath
+      - terra,https://repos.fyralabs.com/terra{{ ansible_facts['distribution_version'] }}
+      - terra-release
+      - terra-gpg-keys
+  register: rpm_settings_command_output
+  changed_when: rpm_settings_command_output.rc != 0

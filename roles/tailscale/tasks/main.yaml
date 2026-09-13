@@ -1,0 +1,12 @@
+- name: Enable tailscaled service
+  become: true
+  ansible.builtin.systemd_service:
+    name: tailscaled
+    enabled: true
+    state: started
+
+- name: Set current user as operator
+  become: true
+  ansible.builtin.command: tailscale set --operator={{ ansible_facts["user_id"] }}
+  register: tailscale_command_output
+  changed_when: tailscale_command_output.rc != 0

@@ -1,0 +1,16 @@
+- name: Enable noctalia-greeter in greetd
+  become: true
+  ansible.builtin.lineinfile:
+    path: /etc/greetd/config.toml
+    regexp: "^command\\s*="
+    line: 'command = "/usr/bin/noctalia-greeter-session"'
+    state: present
+    backup: true
+    mode: "0644"
+
+- name: Enable greetd service
+  become: true
+  ansible.builtin.systemd_service:
+    name: greetd
+    enabled: true
+    state: started
