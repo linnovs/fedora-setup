@@ -2,8 +2,11 @@
   become: true
   ansible.builtin.package:
     name:
+
       # system
       - "fido2-tools"
+      - "fuse"
+      - "fuse-libs"
       - "gnome-keyring"
       - "greetd"
       - "libappindicator-gtk3"
