@@ -18,3 +18,14 @@
   ansible.builtin.command: xdg-user-dirs-update
   register: user_command_output
   changed_when: user_command_output.rc != 0
+
+- name: Set nemo default terminal to ghostty
+  community.general.dconf:
+    key: /org/cinnamon/desktop/applications/terminal/exec
+    value: ghostty
+    state: present
+
+- name: Set meno default terminal exec args
+  community.general.dconf:
+    key: /org/cinnamon/desktop/applications/terminal/exec-arg
+    value: "+new-window --working-directory"
