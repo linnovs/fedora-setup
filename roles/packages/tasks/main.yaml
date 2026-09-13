@@ -10,6 +10,7 @@
       - "pam-u2f"
       - "pamu2fcfg"
       - "python3-pillow"
+      - "python3-psutil"
       - "udiskie"
       - "xdg-desktop-portal"
       - "xdg-desktop-portal-gnome"
