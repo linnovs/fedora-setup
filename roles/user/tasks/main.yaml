@@ -17,11 +17,11 @@
 - name: Set nemo default terminal to ghostty
   community.general.dconf:
     key: /org/cinnamon/desktop/applications/terminal/exec
-    value: "ghostty"
+    value: "'ghostty'"
     state: present
 
 - name: Set meno default terminal exec args
   community.general.dconf:
     key: /org/cinnamon/desktop/applications/terminal/exec-arg
-    value: "+new-window --working-directory"
+    value: "'+new-window --working-directory'"
     state: present
