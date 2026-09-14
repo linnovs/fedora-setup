@@ -2,8 +2,13 @@
 - name: Setup Workstation
   hosts: local
   roles:
-    - rpm_settings
-    - packages
-    - user
-    - tailscale
-    - greetd
+    - role: rpm_settings
+      tags: [rpm]
+    - role: packages
+      tags: [packages]
+    - role: user
+      tags: [user]
+    - role: tailscale
+      tags: [tailscale]
+    - role: greetd
+      tags: [greetd]
