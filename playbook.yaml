@@ -1,10 +1,6 @@
 ---
 - name: Setup Workstation
   hosts: local
-  vars_prompt:
-    - name: hostname
-      prompt: Hostname
-      private: false
   roles:
     - rpm_settings
     - packages
