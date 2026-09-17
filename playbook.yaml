@@ -10,5 +10,7 @@
       tags: [user]
     - role: tailscale
       tags: [tailscale]
+    - role: system
+      tags: [system]
     - role: greetd
       tags: [greetd]

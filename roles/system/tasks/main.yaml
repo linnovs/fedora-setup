@@ -1,0 +1,7 @@
+- name: Permit kdeconnect in home zone
+  become: true
+  ansible.posix.firewalld:
+    service: kdeconnect
+    permanent: true
+    zone: home
+    state: enabled
