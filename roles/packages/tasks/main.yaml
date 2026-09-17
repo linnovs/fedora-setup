@@ -30,7 +30,6 @@
       - "papirus-icon-theme"
 
       # cli
-      - "atuin"
       - "bat"
       - "btop"
       - "chafa"
