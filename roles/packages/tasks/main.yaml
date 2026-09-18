@@ -82,6 +82,7 @@
       - "qalculate-gtk"
       - "qimgv"
       - "satty"
+      - "seahorse"
       - "signal-desktop"
       - "syncthing"
 
