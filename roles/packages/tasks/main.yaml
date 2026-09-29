@@ -12,6 +12,7 @@
       - "libappindicator-gtk3"
       - "pam-u2f"
       - "pamu2fcfg"
+      - "pcsc-lite-devel"
       - "python3-pillow"
       - "python3-psutil"
       - "systemd-devel"
