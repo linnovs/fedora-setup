@@ -14,6 +14,7 @@
       - "pamu2fcfg"
       - "python3-pillow"
       - "python3-psutil"
+      - "systemd-devel"
       - "udiskie"
       - "xdg-desktop-portal"
       - "xdg-desktop-portal-gnome"
