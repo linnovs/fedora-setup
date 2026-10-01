@@ -1,0 +1,16 @@
+- name: Add Flathub repository
+  community.general.flatpak_remote:
+    name: flathub
+    flatpakrepo_url: https://dl.flathub.org/repo/flathub.flatpakrepo
+    method: system
+    state: present
+- name: Install flatpak packages
+  community.general.flatpak:
+    name: "{{ item }}"
+    state: present
+    remote: flathub
+  loop:
+    - "com.github.tchx84.Flatseal"
+    - "com.usebottles.bottles"
+    - "io.github.seadve.Kooha"
+    - "org.gtk.Gtk3theme.adw-gtk3-dark"
