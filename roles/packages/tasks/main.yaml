@@ -34,6 +34,7 @@
 
       # cli
       - "bat"
+      - "bitwarden-cli"
       - "btop"
       - "chafa"
       - "chezmoi"
