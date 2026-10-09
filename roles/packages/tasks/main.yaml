@@ -4,6 +4,7 @@
     name:
 
       # system
+      - "cups"
       - "fido2-tools"
       - "fuse"
       - "fuse-libs"
