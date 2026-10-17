@@ -40,7 +40,6 @@
       - "chafa"
       - "chezmoi"
       - "cowsay"
-      - "direnv"
       - "eza"
       - "fastfetch"
       - "fd-find"
