@@ -25,10 +25,10 @@
       - "xdg-desktop-portal-wlr"
       - "xdg-user-dirs"
 
-      # niri
+      # window manager
       - "adw-gtk3-theme"
       - "bibata-cursor-theme"
-      - "niri"
+      - "umbriel-nightly"
       - "noctalia"
       - "noctalia-greeter"
       - "papirus-icon-theme"
