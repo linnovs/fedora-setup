@@ -4,8 +4,6 @@
     name:
 
       # system
-      - "appimagelauncher"
-      - "compat-gpgme124"
       - "cups"
       - "fido2-tools"
       - "fuse"
