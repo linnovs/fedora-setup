@@ -4,6 +4,7 @@
     flatpakrepo_url: https://dl.flathub.org/repo/flathub.flatpakrepo
     method: system
     state: present
+
 - name: Install flatpak packages
   community.general.flatpak:
     name: "{{ item }}"
