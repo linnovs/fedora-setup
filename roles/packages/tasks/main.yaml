@@ -19,6 +19,7 @@
       - "systemd-boot-unsigned"
       - "systemd-devel"
       - "udiskie"
+      - "upower"
       - "wtype"
       - "xdg-desktop-portal"
       - "xdg-desktop-portal-gnome"
